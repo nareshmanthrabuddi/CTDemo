@@ -10,7 +10,7 @@ node {
      ])
    ])
    stage('Check out the code from Git Repository') { // for display purposes
-      git credentialsId: '5ea37bf2-e9f9-4358-89d1-8b246130f034', url: 'https://github.com/nareshmanthrabuddi/CTDemo.git'
+      git credentialsId: '79715904-7926-40c1-9e75-dea587766745', url: 'https://github.com/MaheshMahi496/CTDemo-1.git'
    }
    stage('Clean') {
       // Run the maven build
@@ -19,7 +19,7 @@ node {
          sh 'mvn clean'
       } else {
             echo "This is windows machine"
-            //bat 'mvn clean'
+            bat 'mvn clean'
       }
    }
    stage('Unit Testing and packaging') {
@@ -27,7 +27,7 @@ node {
       if (isUnix()) {
          sh 'mvn package'
       } else {
-       // bat 'mvn package'
+       bat 'mvn package'
       }
    }
   stage('SONAR Analysis') {
