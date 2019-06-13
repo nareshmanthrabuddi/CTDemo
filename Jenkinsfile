@@ -56,8 +56,8 @@ node {
       if (isUnix()) {
          SoapUIPro(environment: '', pathToProjectFile: 'D:/Software_Installations/Jenkins/workspace/CTDemo/testScripts/CTDemo-readyapi-project.xml', pathToTestrunner: 'D:/Softwares/ReadAPILicense/SmartBear/ReadyAPI-2.6.0/bin/testrunner.bat', projectPassword: '', testCase: '', testSuite: '')        
       } else {
-         //SoapUIPro(environment: '', pathToProjectFile: 'D:/Software_Installations/Jenkins/workspace/CTDemo/testScripts/CTDemo-readyapi-project.xml', pathToTestrunner: 'D:/Softwares/ReadAPILicense/SmartBear/ReadyAPI-2.6.0/bin/testrunner.bat', projectPassword: '', testCase: '', testSuite: '')
-         SoapUIPro environment: '', pathToProjectFile: 'D:/Softwares/ReadAPILicense/SmartBear/ReadyAPI-2.6.0/bin/testrunner.bat', pathToTestrunner: 'D:/Software_Installations/Jenkins/workspace/CTDemo/testScripts/CTDemo-readyapi-project.xml', projectPassword: '', testCase: '', testSuite: ''
+         SoapUIPro(environment: '', pathToProjectFile: 'D:/Software_Installations/Jenkins/workspace/CTDemo/testScripts/CTDemo-readyapi-project.xml', pathToTestrunner: 'D:/Softwares/ReadAPILicense/SmartBear/ReadyAPI-2.6.0/bin/testrunner.bat', projectPassword: '', testCase: '', testSuite: '')
+         //SoapUIPro environment: '', pathToProjectFile: 'D:/Softwares/ReadAPILicense/SmartBear/ReadyAPI-2.6.0/bin/testrunner.bat', pathToTestrunner: 'D:/Software_Installations/Jenkins/workspace/CTDemo/testScripts/CTDemo-readyapi-project.xml', projectPassword: '', testCase: '', testSuite: ''
       }
    }
 
