@@ -19,7 +19,7 @@ node {
          sh 'mvn clean'
       } else {
             echo "This is windows machine"
-            bat 'mvn clean'
+            //bat 'mvn clean'
       }
    }
    stage('Unit Testing and packaging') {
@@ -27,7 +27,7 @@ node {
       if (isUnix()) {
          sh 'mvn package'
       } else {
-        bat 'mvn package'
+       // bat 'mvn package'
       }
    }
   stage('SONAR Analysis') {
@@ -47,7 +47,7 @@ node {
       } else {
             echo "Deployment Started"
             withCredentials([usernamePassword(credentialsId: 'c9cb559a-7c9a-43ce-b1bc-d8aa2dfef0bb', passwordVariable: 'ANYPOINT_PASSWORD', usernameVariable: 'ANYPOINT_USERNAME')]) {
-                bat "mvn deploy -DmuleDeploy -Denv=$ENVIRONMENT -Danypoint.username=${ANYPOINT_USERNAME} -Danypoint.password=${ANYPOINT_PASSWORD}"
+                //bat "mvn deploy -DmuleDeploy -Denv=$ENVIRONMENT -Danypoint.username=${ANYPOINT_USERNAME} -Danypoint.password=${ANYPOINT_PASSWORD}"
             }
       }
    }
@@ -56,7 +56,8 @@ node {
       if (isUnix()) {
          SoapUIPro(environment: '', pathToProjectFile: 'D:/Software_Installations/Jenkins/workspace/CTDemo/testScripts/CTDemo-readyapi-project.xml', pathToTestrunner: 'D:/Softwares/ReadAPILicense/SmartBear/ReadyAPI-2.6.0/bin/testrunner.bat', projectPassword: '', testCase: '', testSuite: '')        
       } else {
-         SoapUIPro(environment: '', pathToProjectFile: 'D:/Software_Installations/Jenkins/workspace/CTDemo/testScripts/CTDemo-readyapi-project.xml', pathToTestrunner: 'D:/Softwares/ReadAPILicense/SmartBear/ReadyAPI-2.6.0/bin/testrunner.bat', projectPassword: '', testCase: '', testSuite: '')
+         //SoapUIPro(environment: '', pathToProjectFile: 'D:/Software_Installations/Jenkins/workspace/CTDemo/testScripts/CTDemo-readyapi-project.xml', pathToTestrunner: 'D:/Softwares/ReadAPILicense/SmartBear/ReadyAPI-2.6.0/bin/testrunner.bat', projectPassword: '', testCase: '', testSuite: '')
+         SoapUIPro environment: '', pathToProjectFile: 'D:/Softwares/ReadAPILicense/SmartBear/ReadyAPI-2.6.0/bin/testrunner.bat', pathToTestrunner: 'D:/Software_Installations/Jenkins/workspace/CTDemo/testScripts/CTDemo-readyapi-project.xml', projectPassword: '', testCase: '', testSuite: ''
       }
    }
 
