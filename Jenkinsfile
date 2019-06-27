@@ -51,20 +51,20 @@ node {
             }
       }
    }
-   stage('Function Test Cases execution') {
+   stage('Functional Test Cases execution') {
       // Run the maven build
       if (isUnix()) {
          //SoapUIPro(environment: '', pathToProjectFile: 'D:/Software_Installations/Jenkins/workspace/CTPipeline/testScripts/CTDemo-readyapi-project.xml', pathToTestrunner: 'C:/Program Files/SmartBear/ReadyAPI-2.6.0/bin/testrunner.bat', projectPassword: '', testCase: '', testSuite: '')        
       } else {
          SoapUIPro(environment: '', pathToProjectFile: 'D:/ProjectsPOCs/ContinuousTesting/CTDemo/CTDemo/testScripts/CTDemo-readyapi-project.xml', pathToTestrunner: 'C:/Program Files/SmartBear/ReadyAPI-2.6.0/bin/testrunner.bat', projectPassword: '', testCase: '', testSuite: '')
-         //SoapUIPro environment: '', pathToProjectFile: 'D:/Softwares/ReadAPILicense/SmartBear/ReadyAPI-2.6.0/bin/testrunner.bat', pathToTestrunner: 'D:/Software_Installations/Jenkins/workspace/CTDemo/testScripts/CTDemo-readyapi-project.xml', projectPassword: '', testCase: '', testSuite: ''
       }
    }
 
    if (currentBuild.currentResult == 'SUCCESS') {
         stage('Success') {
-            echo "Current build status is success::"+currentBuild.currentResult
+            echo "Current build status is success:: "+currentBuild.currentResult
             emailext (
+                attachmentsPattern: '**/Project Report.pdf, **/testScripts/*.xlsx',
                 subject: "Success: Job '${env.JOB_NAME} ${env.BUILD_NUMBER}'",
                 body: "Check console output at '${env.BUILD_URL}' of '${env.JOB_NAME}'",
                 to: "naresh.manthrabuddi@whishworks.com",
@@ -73,7 +73,7 @@ node {
         }
     } else {
         stage('Failed') {
-            echo "Curretn build status is Failed"
+            echo "Current build status is Failed"
             emailext (
                 subject: "Failure: Job '${env.JOB_NAME} ${env.BUILD_NUMBER}'",
                 body: "Check console output at '${env.BUILD_URL}' of '${env.JOB_NAME}'",
