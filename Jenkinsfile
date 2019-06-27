@@ -10,7 +10,7 @@ node {
      ])
    ])
    stage('Check out the code from Git Repository') { // for display purposes
-      git credentialsId: '79715904-7926-40c1-9e75-dea587766745', url: 'https://github.com/MaheshMahi496/CTDemo-1.git'
+      git credentialsId: '5ea37bf2-e9f9-4358-89d1-8b246130f034', url: 'https://github.com/nareshmanthrabuddi/CTDemo.git'
    }
    stage('Clean') {
       // Run the maven build
@@ -54,9 +54,9 @@ node {
    stage('Function Test Cases execution') {
       // Run the maven build
       if (isUnix()) {
-         SoapUIPro(environment: '', pathToProjectFile: 'D:/Software_Installations/Jenkins/workspace/CTPipeline/testScripts/CTDemo-readyapi-project.xml', pathToTestrunner: 'D:/Softwares/ReadAPILicense/SmartBear/ReadyAPI-2.6.0/bin/testrunner.bat', projectPassword: '', testCase: '', testSuite: '')        
+         SoapUIPro(environment: '', pathToProjectFile: 'D:/Software_Installations/Jenkins/workspace/CTPipeline/testScripts/CTDemo-readyapi-project.xml', pathToTestrunner: 'C:\Program Files\SmartBear\ReadyAPI-2.6.0\bin\testrunner.bat', projectPassword: '', testCase: '', testSuite: '')        
       } else {
-         SoapUIPro(environment: '', pathToProjectFile: 'D:/Software_Installations/Jenkins/workspace/CTPipeline/testScripts/CTDemo-readyapi-project.xml', pathToTestrunner: 'D:/Softwares/ReadAPILicense/SmartBear/ReadyAPI-2.6.0/bin/testrunner.bat', projectPassword: '', testCase: '', testSuite: '')
+         SoapUIPro(environment: '', pathToProjectFile: 'D:/Software_Installations/Jenkins/workspace/CTPipeline/testScripts/CTDemo-readyapi-project.xml', pathToTestrunner: 'C:/Program Files/SmartBear/ReadyAPI-2.6.0/bin/testrunner.bat', projectPassword: '', testCase: '', testSuite: '')
          //SoapUIPro environment: '', pathToProjectFile: 'D:/Softwares/ReadAPILicense/SmartBear/ReadyAPI-2.6.0/bin/testrunner.bat', pathToTestrunner: 'D:/Software_Installations/Jenkins/workspace/CTDemo/testScripts/CTDemo-readyapi-project.xml', projectPassword: '', testCase: '', testSuite: ''
       }
    }
