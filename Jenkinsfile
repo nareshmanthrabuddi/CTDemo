@@ -54,7 +54,7 @@ node {
    stage('Function Test Cases execution') {
       // Run the maven build
       if (isUnix()) {
-         SoapUIPro(environment: '', pathToProjectFile: 'D:/Software_Installations/Jenkins/workspace/CTPipeline/testScripts/CTDemo-readyapi-project.xml', pathToTestrunner: 'C:\Program Files\SmartBear\ReadyAPI-2.6.0\bin\testrunner.bat', projectPassword: '', testCase: '', testSuite: '')        
+         //SoapUIPro(environment: '', pathToProjectFile: 'D:/Software_Installations/Jenkins/workspace/CTPipeline/testScripts/CTDemo-readyapi-project.xml', pathToTestrunner: 'C:/Program Files/SmartBear/ReadyAPI-2.6.0/bin/testrunner.bat', projectPassword: '', testCase: '', testSuite: '')        
       } else {
          SoapUIPro(environment: '', pathToProjectFile: 'D:/Software_Installations/Jenkins/workspace/CTPipeline/testScripts/CTDemo-readyapi-project.xml', pathToTestrunner: 'C:/Program Files/SmartBear/ReadyAPI-2.6.0/bin/testrunner.bat', projectPassword: '', testCase: '', testSuite: '')
          //SoapUIPro environment: '', pathToProjectFile: 'D:/Softwares/ReadAPILicense/SmartBear/ReadyAPI-2.6.0/bin/testrunner.bat', pathToTestrunner: 'D:/Software_Installations/Jenkins/workspace/CTDemo/testScripts/CTDemo-readyapi-project.xml', projectPassword: '', testCase: '', testSuite: ''
